@@ -14,26 +14,27 @@ const LanguageSelector: FC<LanguageSelectorProps> = ({
   onSelect,
 }) => {
   return (
-    <Box>
+    <Box ml={2} mb={4}>
       <Text mb={2} fontSize="lg">
         Language:{" "}
       </Text>
       <Menu.Root>
         <Menu.Trigger asChild>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" bg={"#FFFFFF"}>
             {language}
           </Button>
         </Menu.Trigger>
         <Portal>
           <Menu.Positioner>
             <Menu.Content>
-              {languages.map(([language, version]) => (
+              {languages.map(([lang, version]) => (
                 <Menu.Item
-                  key={language}
-                  value={language}
-                  onClick={() => onSelect(language)}
+                  key={lang}
+                  color={language === lang ? "blue.400" : ""}
+                  value={lang}
+                  onClick={() => onSelect(lang)}
                 >
-                  {language}
+                  {lang}
                   &nbsp;
                   <Text as={"span"} color={"gray.600"} fontSize={"sm"}>
                     {version}

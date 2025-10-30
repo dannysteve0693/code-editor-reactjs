@@ -5,7 +5,7 @@ import type { FC } from "react";
 const languages = Object.entries(LANGUAGE_VERSIONS) as [Language, string][];
 
 interface LanguageSelectorProps {
-  language: string;
+  language: Language;
   onSelect: (language: Language) => void;
 }
 

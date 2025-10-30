@@ -10,7 +10,7 @@ import Output from "./Output";
 const CodeEditor = () => {
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
   const [value, setValue] = useState<string>("");
-  const [language, setLanguage] = useState<string>("javascript");
+  const [language, setLanguage] = useState<Language>("javascript");
 
   const onMount: OnMount = (editor) => {
     editorRef.current = editor;

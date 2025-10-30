@@ -1,8 +1,16 @@
 import { Box, Button, Text } from "@chakra-ui/react"
 import { executeCode } from "./api";
 import { useState } from "react";
+import type * as monaco from "monaco-editor";
+import type { Language } from "@/constants";
 
-const Output = ({ editorRef, language }) => {
+interface OutputProps {
+  editorRef: React.MutableRefObject<monaco.editor.IStandaloneCodeEditor | null>;
+  language: Language;
+}
+
+
+const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
   const [output, setOutput] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 

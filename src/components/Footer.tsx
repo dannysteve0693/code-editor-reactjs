@@ -1,7 +1,5 @@
 import { Box, Center } from "@chakra-ui/react";
 
-
-
 const Footer = () => {
     return (
         <Center>
